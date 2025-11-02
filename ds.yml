@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  spec:
+spec:
   selector:
     matchLabels:
       app: mysql
@@ -34,7 +34,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql-service
- spec:
+spec:
   ports:
   - port: 3306
   selector:
@@ -57,7 +57,7 @@ spec:
     spec:
       containers:
       - name: bankapp
-        image: bankapp2025.azurecr.io/bankapp:e4ea4808e3fc2fd857472d7636b080725de7fd8a
+        image: bankapp2025.azurecr.io/bankapp:68c92b6c0c5f6860f0ba43904b88b3da1313e361
         ports:
         - containerPort: 8080
         env:
