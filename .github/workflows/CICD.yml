@@ -88,8 +88,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-- name: Build with Maven
-  run: mvn clean install -DskipTests
+    - name: Build with Maven
+      run: mvn clean install -DskipTests
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v5.0.0 # Ex: v4.1.0, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
       env:
