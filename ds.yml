@@ -40,8 +40,8 @@ metadata:
   name: mysql-secret
 type: Opaque
 data:
-  username: bXlzcWx1c2Vy     # base64 of mysqluser
-  password: bXlwYXNzd29yZDEyMw==   # base64 of mypassword123
+  username: bXlzcWx1c2Vy
+  password: bXlwYXNzd29yZDEyMw==
   
 ---
 
