@@ -19,9 +19,9 @@ spec:
       - image: mysql:8
         name: mysql
         env:
-        - name: MYSQL-ROOT-PASSWORD
+        - name: MYSQL_ROOT_PASSWORD
           value: "Test@123"
-        - name: MYSQL-DATABASE
+        - name: MYSQL_DATABASE
           value: "bankappdb"
         ports:
         - containerPort: 3306
