@@ -60,7 +60,7 @@ Developer → GitHub → GitHub Actions CI/CD → Azure Container Registry (ACR)
 ### 🏠 Home Page
 ![Home Page](./screenshots/app_home.png)
 
-### 🔐 Login Page
+### 🔐 Register Page
 ![Login Page](./screenshots/app_registration.png)
 
 ### 🚀 CI/CD Pipeline Success
