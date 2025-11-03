@@ -1,4 +1,16 @@
 ---
+# Secret for MySQL & Spring App
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-secret
+type: Opaque
+data:
+  root_password: VGVzdEAxMjM=
+  db_name: YmFua2FwcGRi       
+  SPRING_DATASOURCE_USERNAME: cm9vdA==
+  SPRING_DATASOURCE_PASSWORD: VGVzdEAxMjM=
+---
 # MySQL Deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -33,21 +45,6 @@ spec:
         - containerPort: 3306
           name: mysql
 ---
-#  secrets
-apiVersion: v1
-kind: Secret
-metadata:
-  name: mysql-secret
-type: Opaque
-data:
-  username: bXlzcWx1c2Vy
-  password: bXlwYXNzd29yZDEyMw==
-  SPRING_DATASOURCE_USERNAME: cm9vdA==
-  SPRING_DATASOURCE_PASSWORD: VGVzdEAxMjM=
-  
----
-
-
 # MySQL Service
 apiVersion: v1
 kind: Service
@@ -81,17 +78,17 @@ spec:
         - containerPort: 8080
         env:
         - name: SPRING_DATASOURCE_URL
-    value: jdbc:mysql://mysql-service:3306/bankappdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-  - name: SPRING_DATASOURCE_USERNAME
-    valueFrom:
-      secretKeyRef:
-        name: mysql-secret
-        key: SPRING_DATASOURCE_USERNAME
-  - name: SPRING_DATASOURCE_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: mysql-secret
-        key: SPRING_DATASOURCE_PASSWORD
+          value: jdbc:mysql://mysql-service:3306/bankappdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+        - name: SPRING_DATASOURCE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: SPRING_DATASOURCE_USERNAME
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: SPRING_DATASOURCE_PASSWORD
 ---
 # Bank Application Service
 apiVersion: v1
@@ -104,5 +101,4 @@ spec:
   - port: 80
     targetPort: 8080
   selector:
-    app: bankapp 
-    
+    app: bankapp
