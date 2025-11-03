@@ -66,8 +66,13 @@ Developer → GitHub → GitHub Actions CI/CD → Azure Container Registry (ACR)
 ### 🚀 CI/CD Pipeline Success
 ![CI/CD Pipeline](./screenshots/pipeline_success.png)
 
+### ✅ Deployments  loads in AKS
+![Pods Running](./screenshots/deployments.png)
 
 ### ✅ Pods Running in AKS
+![Pods Running](./screenshots/pods.png)
+
+### ✅ Pods Running in AKS terminal
 ![Pods Running](./screenshots/cluster-page.png)
 
 ### 🌐 Service & Ingress
