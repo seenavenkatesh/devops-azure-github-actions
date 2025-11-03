@@ -20,12 +20,29 @@ spec:
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "Test@123"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: root_password
         - name: MYSQL_DATABASE
-          value: "bankappdb"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: db_name
         ports:
         - containerPort: 3306
           name: mysql
+---
+#  secrets
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-secret
+type: Opaque
+data:
+  username: bXlzcWx1c2Vy     # base64 of mysqluser
+  password: bXlwYXNzd29yZDEyMw==   # base64 of mypassword123
+  
 ---
 
 
