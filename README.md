@@ -75,7 +75,7 @@ Developer → GitHub → GitHub Actions CI/CD → Azure Container Registry (ACR)
 ### ✅ Pods Running in AKS terminal
 ![Pods Running](./screenshots/cluster-page.png)
 
-### ✅ configure self-hosted runner for CICD pipeline
+### ✅ configured self-hosted runner for CICD pipeline
 ![Pods Running](./screenshots/self_hosted_runner.png)
 
 ### ✅ personal-hosted runner listening for jobs
