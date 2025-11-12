@@ -85,6 +85,6 @@ Developer → GitHub → GitHub Actions CI/CD → Azure Container Registry (ACR)
 ### 🌐 Service & Ingress
 ![Service](./screenshots/services.png)
 
-### 📊 Project Dashboard Overview
+### 📊 Sonarqube Dashboard Overview
 Shows code quality summary, bugs, vulnerabilities, code smells, and coverage.
 ![SonarQube Dashboard](./screenshots/sonar.png)
